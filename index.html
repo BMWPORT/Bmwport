@@ -3,321 +3,809 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameHub - Discover & Download</title>
+    <title>WebExpress - Professional Websites for 5€</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --dark-bg: #121212;
-            --card-bg: #1e1e1e;
-            --accent: #ff5e5e;
-            --text: #f5f5f5;
-            --text-secondary: #b0b0b0;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
         }
-        
+
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4ade80;
+        }
+
         body {
-            background-color: var(--dark-bg);
-            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: var(--dark);
             line-height: 1.6;
         }
-        
+
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 15px;
         }
-        
+
+        /* Header Styles */
         header {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 3rem;
+            padding: 20px 0;
         }
-        
+
         .logo {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--accent);
-        }
-        
-        .search-container {
-            position: relative;
-            width: 300px;
-        }
-        
-        .search-container input {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            background-color: var(--card-bg);
-            border: none;
-            border-radius: 50px;
-            color: var(--text);
-            font-size: 1rem;
-        }
-        
-        .search-container input::placeholder {
-            color: var(--text-secondary);
-        }
-        
-        .filter-tabs {
             display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .filter-tab {
-            padding: 0.5rem 1.5rem;
-            background-color: var(--card-bg);
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        
-        .filter-tab.active {
-            background-color: var(--accent);
-            color: var(--dark-bg);
-            font-weight: 600;
-        }
-        
-        .game-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        
-        .game-card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-        
-        .game-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .game-image {
-            height: 160px;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .game-info {
-            padding: 1.5rem;
-        }
-        
-        .game-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .game-description {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        
-        .game-meta {
-            display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 10px;
         }
-        
-        .game-tag {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
+
+        .logo h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: 800;
         }
-        
-        .download-btn {
-            background-color: var(--accent);
-            color: var(--dark-bg);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
+
+        .logo i {
+            color: var(--accent);
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            display: inline-block;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
         }
-        
-        .pagination {
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%234361ee" opacity="0.05"/><circle cx="20" cy="20" r="5" fill="%234cc9f0" opacity="0.3"/><circle cx="80" cy="80" r="8" fill="%233f37c9" opacity="0.3"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
             display: flex;
             justify-content: center;
-            margin-top: 3rem;
-            gap: 0.5rem;
         }
-        
-        .page-btn {
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #555;
+            max-width: 600px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, var(--accent) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(76, 201, 240, 0.3);
+        }
+
+        /* Features Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        /* Order Section */
+        .order-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .order-steps {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            width: 250px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: white;
+            color: var(--primary);
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: white;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .info-card {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .info-card i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Login Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #777;
+        }
+
+        .modal-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 40px;
             height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            cursor: pointer;
-            background-color: var(--card-bg);
+            background: #333;
+            color: white;
+            border-radius: 50%;
+            transition: background 0.3s;
         }
-        
-        .page-btn.active {
-            background-color: var(--accent);
-            color: var(--dark-bg);
-            font-weight: 600;
+
+        .social-links a:hover {
+            background: var(--primary);
         }
-        
-        @media (max-width: 768px) {
-            header {
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
                 flex-direction: column;
-                gap: 1rem;
-                align-items: flex-start;
+                text-align: center;
             }
             
-            .search-container {
+            .hero-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .step {
                 width: 100%;
+                max-width: 350px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 60px 0;
             }
             
-            .game-grid {
-                grid-template-columns: 1fr;
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">GameHub</div>
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Search games...">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <h1>Web<span>Express</span></h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" id="loginBtn">Admin Login</a></li>
+                </ul>
+                <a href="#order" class="btn btn-primary">Order Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Professional Websites <br><span>Just 5€</span></h1>
+                    <p>Get a fully functional website created for your business or personal use in less than 1 week. Our express service delivers quality websites at an unbeatable price!</p>
+                    <div class="price-tag">Only 5€ per website</div>
+                    <br><br>
+                    <a href="#order" class="btn btn-primary">Order Your Website</a>
+                    <a href="#features" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="hero-image">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'><rect width='400' height='300' fill='%234361ee' opacity='0.05' rx='15'/><rect x='50' y='50' width='300' height='200' fill='white' rx='10'/><rect x='70' y='80' width='260' height='30' fill='%233f37c9' rx='5'/><circle cx='330' cy='95' r='8' fill='%234cc9f0'/><circle cx='305' cy='95' r='8' fill='%23f0f0f0'/><circle cx='280' cy='95' r='8' fill='%23f0f0f0'/><rect x='70' y='130' width='80' height='100' fill='%234cc9f0' opacity='0.3' rx='5'/><rect x='165' y='130' width='80' height='40' fill='%234361ee' opacity='0.3' rx='5'/><rect x='165' y='180' width='80' height='50' fill='%233f37c9' opacity='0.3' rx='5'/><rect x='255' y='130' width='80' height='100' fill='%234cc9f0' opacity='0.3' rx='5'/></svg>" alt="Website Creation">
+                </div>
             </div>
-        </header>
-        
-        <div class="filter-tabs">
-            <div class="filter-tab active" data-filter="all">All Games</div>
-            <div class="filter-tab" data-filter="multiplayer">Multiplayer</div>
-            <div class="filter-tab" data-filter="singleplayer">Singleplayer</div>
-            <div class="filter-tab" data-filter="new">New Releases</div>
         </div>
-        
-        <div class="game-grid" id="gameGrid">
-            <!-- Games will be dynamically inserted here -->
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our Service</h2>
+                <p>We provide exceptional value with our fast, affordable website creation service</p>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Super Fast Delivery</h3>
+                    <p>Your website will be ready to launch in less than 1 week. We prioritize speed without compromising quality.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-euro-sign"></i>
+                    <h3>Unbeatable Price</h3>
+                    <p>Only 5€ for a complete, professional website. No hidden fees or extra charges.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Fully Responsive</h3>
+                    <p>Your website will look great on all devices - desktops, tablets, and smartphones.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Dedicated Support</h3>
+                    <p>We provide ongoing support to ensure your website meets all your requirements.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Free Revisions</h3>
+                    <p>We offer free minor revisions to make sure you're completely satisfied with the result.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure & Reliable</h3>
+                    <p>All websites are built with security best practices and optimized for performance.</p>
+                </div>
+            </div>
         </div>
-        
-        <div class="pagination">
-            <div class="page-btn" id="prevPage">←</div>
-            <div class="page-btn active">1</div>
-            <div class="page-btn">2</div>
-            <div class="page-btn">3</div>
-            <div class="page-btn">4</div>
-            <div class="page-btn">5</div>
-            <div class="page-btn" id="nextPage">→</div>
+    </section>
+
+    <!-- Order Section -->
+    <section class="order-section" id="order">
+        <div class="container">
+            <div class="section-title">
+                <h2>How To Order Your Website</h2>
+                <p>Getting your professional website is quick and easy</p>
+            </div>
+            <div class="order-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Send Your Request</h3>
+                    <p>Contact us via Google Messages with your website requirements</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Confirm Details</h3>
+                    <p>We'll discuss your needs and confirm all the details</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Make Payment</h3>
+                    <p>Pay the 5€ fee securely via our payment methods</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Receive Website</h3>
+                    <p>Get your completed website in less than 1 week</p>
+                </div>
+            </div>
+            <a href="https://messages.google.com/web/conversations/new" target="_blank" class="btn btn-outline" style="background: white; color: var(--primary);">
+                <i class="fab fa-google"></i> Order via Google Messages
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Have questions? Get in touch with our team</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3><i class="fas fa-envelope"></i> Email Us</h3>
+                        <p>For order inquiries and support:</p>
+                        <p><strong>bulgarianlux@gmail.com</strong></p>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-clock"></i> Working Hours</h3>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        <p>Saturday: 10:00 AM - 2:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-comment-alt"></i> Direct Message</h3>
+                        <p>Prefer to message us directly?</p>
+                        <a href="https://messages.google.com/web/conversations/new" target="_blank" class="btn btn-primary" style="margin-top: 15px;">
+                            <i class="fab fa-google"></i> Message via Google
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send us a message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Admin Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="loginEmail" class="form-control" required placeholder="admin@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" required placeholder="Enter your password">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                </div>
+                <p style="text-align: center; margin-top: 20px;">
+                    <a href="#" style="color: var(--primary);">Forgot password?</a>
+                </p>
+                <p style="text-align: center; margin-top: 10px;">
+                    For order inquiries, please email: <strong>bulgarianlux@gmail.com</strong>
+                </p>
+            </form>
         </div>
     </div>
 
-    <script>
-        // Enhanced game data with images and categories
-        const games = [
-            {
-                id: 1,
-                title: "Crimson Empire",
-                description: "Build your underground empire in this gritty open-world crime simulator with deep storylines.",
-                tags: ["multiplayer", "open-world"],
-                image: "https://via.placeholder.com/400x225/ff5e5e/121212?text=Crimson+Empire",
-                link: "https://tpi.li/F9gEZceA",
-                rating: 4.2,
-                newRelease: true
-            },
-         
-
-        // DOM elements
-        const gameGrid = document.getElementById('gameGrid');
-        const searchInput = document.getElementById('searchInput');
-        const filterTabs = document.querySelectorAll('.filter-tab');
-        const pageBtns = document.querySelectorAll('.page-btn');
-
-        // Render games function
-        function renderGames(gamesToRender) {
-            gameGrid.innerHTML = '';
-            
-            gamesToRender.forEach(game => {
-                const gameCard = document.createElement('div');
-                gameCard.className = 'game-card';
-                
-                gameCard.innerHTML = `
-                    <div class="game-image" style="background-image: url('${game.image}')"></div>
-                    <div class="game-info">
-                        <h3 class="game-title">${game.title}</h3>
-                        <p class="game-description">${game.description}</p>
-                        <div class="game-meta">
-                            <span class="game-tag">${game.tags[0]}</span>
-                            <a href="${game.link}" class="download-btn" target="_blank">Download</a>
-                        </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>WebExpress</h3>
+                    <p>Professional website creation service delivering high-quality websites at an unbeatable price of only 5€ per site.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                `;
-                
-                gameGrid.appendChild(gameCard);
-            });
-        }
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Website Creation</a></li>
+                        <li><a href="#">Website Redesign</a></li>
+                        <li><a href="#">Landing Pages</a></li>
+                        <li><a href="#">Business Websites</a></li>
+                        <li><a href="#">Personal Websites</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> bulgarianlux@gmail.com</li>
+                        <li><i class="fab fa-google"></i> Order via Google Messages</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9:00AM - 6:00PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 WebExpress. All Rights Reserved. | Professional Websites for 5€</p>
+            </div>
+        </div>
+    </footer>
 
-        // Filter games function
-        function filterGames(filter) {
-            let filteredGames = [...games];
-            
-            if (filter === 'multiplayer') {
-                filteredGames = games.filter(game => game.tags.includes('multiplayer'));
-            } else if (filter === 'singleplayer') {
-                filteredGames = games.filter(game => game.tags.includes('singleplayer'));
-            } else if (filter === 'new') {
-                filteredGames = games.filter(game => game.newRelease);
+    <script>
+        // Login Modal Functionality
+        const loginBtn = document.getElementById('loginBtn');
+        const loginModal = document.getElementById('loginModal');
+        const closeModal = document.querySelector('.close-modal');
+        
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginModal.style.display = 'flex';
+        });
+        
+        closeModal.addEventListener('click', function() {
+            loginModal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', function(e) {
+            if (e.target === loginModal) {
+                loginModal.style.display = 'none';
             }
-            
-            renderGames(filteredGames);
-        }
-
-        // Search function
-        function searchGames(term) {
-            const filteredGames = games.filter(game => 
-                game.title.toLowerCase().includes(term) || 
-                game.description.toLowerCase().includes(term) ||
-                game.tags.some(tag => tag.toLowerCase().includes(term))
-            );
-            renderGames(filteredGames);
-        }
-
-        // Event listeners
-        filterTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                filterTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                filterGames(tab.dataset.filter);
-            });
         });
-
-        searchInput.addEventListener('input', (e) => {
-            searchGames(e.target.value.toLowerCase());
+        
+        // Form Submission Handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you soon.');
+            this.reset();
         });
-
-        pageBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                if (!btn.classList.contains('active') {
-                    document.querySelector('.page-btn.active').classList.remove('active');
-                    btn.classList.add('active');
-                    // In a real app, you would load the appropriate page of games here
+        
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Login request received. For admin access, please contact bulgarianlux@gmail.com.');
+            loginModal.style.display = 'none';
+            this.reset();
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
-
-        // Initial render
-        renderGames(games);
     </script>
 </body>
 </html>
