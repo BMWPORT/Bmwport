@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebExpress - Professional Websites for 5€</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #4361ee;
-            --secondary: #3f37c9;
-            --accent: #4cc9f0;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --success: #4ade80;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
-            color: var(--dark);
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
+A
         }
 
         /* Header Styles */
@@ -118,6 +83,17 @@
         .btn-outline:hover {
             background: var(--primary);
             color: white;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #d3166b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(247, 37, 133, 0.4);
         }
 
         /* Hero Section */
@@ -275,6 +251,44 @@
             margin-bottom: 15px;
         }
 
+        /* Payment Section */
+        .payment-section {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .payment-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--light);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+
+        .payment-method {
+            width: 60px;
+            height: 40px;
+            background: white;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-method img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
         /* Contact Section */
         .contact-section {
             background: white;
@@ -339,7 +353,7 @@
             resize: vertical;
         }
 
-        /* Login Modal */
+        /* Login/Register Modal */
         .modal {
             display: none;
             position: fixed;
@@ -376,6 +390,118 @@
             text-align: center;
             margin-bottom: 30px;
             color: var(--secondary);
+        }
+
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .auth-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #777;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .auth-tab.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .auth-form {
+            display: none;
+        }
+
+        .auth-form.active {
+            display: block;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+
+        .form-footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* User Dashboard */
+        .dashboard-section {
+            padding: 80px 0;
+            min-height: 500px;
+        }
+
+        .dashboard-container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .welcome-message {
+            margin-bottom: 30px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .user-avatar {
+            width: 80px;
+            height: 80px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .user-details h3 {
+            margin-bottom: 5px;
+        }
+
+        .user-details p {
+            color: #666;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .dashboard-card {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-card i {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .dashboard-card h3 {
+            margin-bottom: 10px;
         }
 
         /* Footer */
@@ -506,6 +632,10 @@
             .section-title h2 {
                 font-size: 2rem;
             }
+
+            .payment-container {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -522,7 +652,7 @@
                     <li><a href="#features">Features</a></li>
                     <li><a href="#how-it-works">How It Works</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" id="loginBtn">Admin Login</a></li>
+                    <li><a href="#" id="authBtn">Login</a></li>
                 </ul>
                 <a href="#order" class="btn btn-primary">Order Now</a>
             </nav>
@@ -601,7 +731,7 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Send Your Request</h3>
-                    <p>Contact us via Google Messages with your website requirements</p>
+                    <p>Contact us with your website requirements</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
@@ -619,9 +749,57 @@
                     <p>Get your completed website in less than 1 week</p>
                 </div>
             </div>
-            <a href="https://messages.google.com/web/conversations/new" target="_blank" class="btn btn-outline" style="background: white; color: var(--primary);">
-                <i class="fab fa-google"></i> Order via Google Messages
-            </a>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="#payment" class="btn btn-primary">Pay Now</a>
+                <a href="https://messages.google.com/web/conversations/new" target="_blank" class="btn btn-outline" style="background: white; color: var(--primary);">
+                    <i class="fab fa-google"></i> Message via Google
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="section payment-section" id="payment">
+        <div class="container">
+            <div class="section-title">
+                <h2>Secure Payment</h2>
+                <p>Complete your order with our secure payment system</p>
+            </div>
+            <div class="payment-container">
+                <form id="paymentForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="website-details">Website Requirements</label>
+                        <textarea id="website-details" class="form-control" required placeholder="Describe what you need for your website..."></textarea>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" alt="Visa">
+                        </div>
+                        <div class="payment-method">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" alt="Mastercard">
+                        </div>
+                        <div class="payment-method">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/paypal/paypal-original.svg" alt="PayPal">
+                        </div>
+                    </div>
+                    
+                    <div id="card-element" class="form-control" style="padding: 10px;"></div>
+                    <div id="card-errors" role="alert" style="color: var(--danger); margin: 10px 0;"></div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        Pay 5€ Now
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -679,30 +857,113 @@
         </div>
     </section>
 
-    <!-- Login Modal -->
-    <div class="modal" id="loginModal">
+    <!-- User Dashboard (hidden by default) -->
+    <section class="section dashboard-section" id="dashboard" style="display: none;">
+        <div class="container">
+            <div class="dashboard-container">
+                <div class="welcome-message">
+                    <h2>Welcome to Your Dashboard</h2>
+                    <p>Manage your website orders and account details</p>
+                </div>
+                
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <h3 id="user-name">John Doe</h3>
+                        <p id="user-email">john@example.com</p>
+                        <button id="logoutBtn" class="btn btn-danger" style="margin-top: 10px;">Logout</button>
+                    </div>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <i class="fas fa-file-alt"></i>
+                        <h3>My Orders</h3>
+                        <p>View and manage your website orders</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <i class="fas fa-cog"></i>
+                        <h3>Account Settings</h3>
+                        <p>Update your profile information</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Support</h3>
+                        <p>Get help with your website</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="authModal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <h2 class="modal-title">Admin Login</h2>
-            <form id="loginForm">
+            <h2 class="modal-title">Welcome to WebExpress</h2>
+            
+            <div class="auth-tabs">
+                <div class="auth-tab active" data-tab="login">Login</div>
+                <div class="auth-tab" data-tab="register">Register</div>
+            </div>
+            
+            <form id="loginForm" class="auth-form active">
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="loginEmail" class="form-control" required placeholder="admin@example.com">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" class="form-control" required placeholder="your@email.com">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" class="form-control" required placeholder="Enter your password">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" class="form-control" required placeholder="Enter your password">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
                 </div>
-                <p style="text-align: center; margin-top: 20px;">
-                    <a href="#" style="color: var(--primary);">Forgot password?</a>
-                </p>
-                <p style="text-align: center; margin-top: 10px;">
-                    For order inquiries, please email: <strong>bulgarianlux@gmail.com</strong>
-                </p>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#" class="switch-tab" data-tab="register">Register here</a></p>
+                </div>
             </form>
+            
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" class="form-control" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email Address</label>
+                    <input type="email" id="registerEmail" class="form-control" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" class="form-control" required placeholder="Create a password">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" class="form-control" required placeholder="Confirm your password">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+                </div>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" class="switch-tab" data-tab="login">Login here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Payment Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div style="text-align: center; padding: 20px;">
+                <i class="fas fa-check-circle" style="font-size: 5rem; color: var(--success); margin-bottom: 20px;"></i>
+                <h2 class="modal-title">Payment Successful!</h2>
+                <p>Thank you for your order. We've received your payment of 5€.</p>
+                <p>We'll contact you shortly to discuss your website requirements.</p>
+                <button class="btn btn-primary" style="margin-top: 30px;" id="closeSuccessModal">Continue</button>
+            </div>
         </div>
     </div>
 
@@ -750,43 +1011,233 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 WebExpress. All Rights Reserved. | Professional Websites for 5€</p>
+                <p>&copy; 2025 Webfast. All Rights Reserved. | Professional Websites for 5€</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Login Modal Functionality
-        const loginBtn = document.getElementById('loginBtn');
-        const loginModal = document.getElementById('loginModal');
-        const closeModal = document.querySelector('.close-modal');
-        
-        loginBtn.addEventListener('click', function(e) {
+        // Initialize Stripe.js
+        const stripe = Stripe('pk_test_51P9ZJ2P3Jt9x3p3t6Z8Z8Z8Z8Z8Z8Z8Z8Z8Z8Z8Z8Z8Z8Z8Z8Z8Z8Z8Z8Z8Z8Z8');
+        const elements = stripe.elements();
+        const cardElement = elements.create('card');
+        cardElement.mount('#card-element');
+
+        // Handle payment form submission
+        document.getElementById('paymentForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            loginModal.style.display = 'flex';
-        });
-        
-        closeModal.addEventListener('click', function() {
-            loginModal.style.display = 'none';
-        });
-        
-        window.addEventListener('click', function(e) {
-            if (e.target === loginModal) {
-                loginModal.style.display = 'none';
+            
+            const {error, paymentMethod} = await stripe.createPaymentMethod({
+                type: 'card',
+                card: cardElement,
+                billing_details: {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value
+                }
+            });
+
+            if (error) {
+                document.getElementById('card-errors').textContent = error.message;
+            } else {
+                // In a real app, you would send the paymentMethod.id to your server
+                // Here we'll simulate a successful payment
+                document.getElementById('card-errors').textContent = '';
+                showSuccessModal();
+                
+                // Send email notification (simulated)
+                sendEmailNotification(
+                    document.getElementById('email').value,
+                    document.getElementById('name').value,
+                    document.getElementById('website-details').value
+                );
             }
+        });
+
+        // Show success modal
+        function showSuccessModal() {
+            document.getElementById('successModal').style.display = 'flex';
+        }
+
+        // Close success modal
+        document.getElementById('closeSuccessModal').addEventListener('click', function() {
+            document.getElementById('successModal').style.display = 'none';
+            document.getElementById('paymentForm').reset();
+            cardElement.clear();
+        });
+
+        // Simulate sending email notification
+        function sendEmailNotification(email, name, details) {
+            console.log(`Sending email to: ${email}`);
+            console.log(`Customer: ${name}`);
+            console.log(`Website details: ${details}`);
+            console.log('Email sent successfully!');
+            
+            // In a real app, you would use a service like EmailJS, SendGrid, or your backend
+        }
+
+        // Auth Modal Functionality
+        const authBtn = document.getElementById('authBtn');
+        const authModal = document.getElementById('authModal');
+        const closeModal = document.querySelectorAll('.close-modal');
+        const authTabs = document.querySelectorAll('.auth-tab');
+        const switchTabs = document.querySelectorAll('.switch-tab');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const dashboardSection = document.getElementById('dashboard');
+        
+        // Check if user is logged in (simulated with localStorage)
+        function checkAuth() {
+            const user = localStorage.getItem('webexpress_user');
+            if (user) {
+                const userData = JSON.parse(user);
+                authBtn.textContent = 'My Account';
+                document.getElementById('user-name').textContent = userData.name;
+                document.getElementById('user-email').textContent = userData.email;
+                dashboardSection.style.display = 'block';
+            } else {
+                authBtn.textContent = 'Login';
+                dashboardSection.style.display = 'none';
+            }
+        }
+        
+        // Initialize auth check
+        checkAuth();
+        
+        // Open auth modal
+        authBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (localStorage.getItem('webexpress_user')) {
+                // User is logged in, scroll to dashboard
+                window.scrollTo({
+                    top: dashboardSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            } else {
+                // User is not logged in, show auth modal
+                authModal.style.display = 'flex';
+            }
+        });
+        
+        // Close modals
+        closeModal.forEach(btn => {
+            btn.addEventListener('click', function() {
+                authModal.style.display = 'none';
+                document.getElementById('successModal').style.display = 'none';
+            });
+        });
+        
+        // Switch between login and register tabs
+        authTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                authTabs.forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.auth-form').forEach(form => form.classList.remove('active'));
+                
+                this.classList.add('active');
+                document.getElementById(tabId + 'Form').classList.add('active');
+            });
+        });
+        
+        // Switch tabs from links
+        switchTabs.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const tabId = this.getAttribute('data-tab');
+                
+                authTabs.forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.auth-form').forEach(form => form.classList.remove('active'));
+                
+                document.querySelector(`.auth-tab[data-tab="${tabId}"]`).classList.add('active');
+                document.getElementById(tabId + 'Form').classList.add('active');
+            });
+        });
+        
+        // Handle login
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            // In a real app, you would validate and send to your backend
+            // Here we'll simulate a successful login
+            const user = {
+                name: 'Demo User',
+                email: email
+            };
+            
+            localStorage.setItem('webexpress_user', JSON.stringify(user));
+            authModal.style.display = 'none';
+            checkAuth();
+            
+            // Scroll to dashboard
+            window.scrollTo({
+                top: dashboardSection.offsetTop - 80,
+                behavior: 'smooth'
+            });
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Handle registration
+        registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('registerName').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            // Simple validation
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            // In a real app, you would send to your backend
+            // Here we'll simulate a successful registration
+            const user = {
+                name: name,
+                email: email
+            };
+            
+            localStorage.setItem('webexpress_user', JSON.stringify(user));
+            authModal.style.display = 'none';
+            checkAuth();
+            
+            // Send welcome email (simulated)
+            console.log(`Sending welcome email to: ${email}`);
+            console.log('Welcome email sent successfully!');
+            
+            // Scroll to dashboard
+            window.scrollTo({
+                top: dashboardSection.offsetTop - 80,
+                behavior: 'smooth'
+            });
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Handle logout
+        logoutBtn.addEventListener('click', function() {
+            localStorage.removeItem('webexpress_user');
+            checkAuth();
+            
+            // Scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
         
         // Form Submission Handling
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your message! We will contact you soon.');
-            this.reset();
-        });
-        
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Login request received. For admin access, please contact bulgarianlux@gmail.com.');
-            loginModal.style.display = 'none';
             this.reset();
         });
         
@@ -805,6 +1256,16 @@
                     });
                 }
             });
+        });
+        
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === authModal) {
+                authModal.style.display = 'none';
+            }
+            if (e.target === document.getElementById('successModal')) {
+                document.getElementById('successModal').style.display = 'none';
+            }
         });
     </script>
 </body>
